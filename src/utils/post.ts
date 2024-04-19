@@ -16,6 +16,10 @@ export function sortMDByDate(posts: Array<CollectionEntry<'post'>>) {
 	})
 }
 
+export function getAllPostByCollection(posts: Array<CollectionEntry<'post'>>, collection: string) {
+	return posts.filter(post => post.data.collection === collection);
+}
+
 /** Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so. */
 export function getAllTags(posts: Array<CollectionEntry<'post'>>) {
 	return posts.flatMap((post) => [...post.data.tags])

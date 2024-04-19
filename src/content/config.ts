@@ -13,6 +13,7 @@ const post = defineCollection({
 		z.object({
 			title: z.string().max(60),
 			description: z.string().min(50).max(160),
+			collection: z.enum(['blog', 'writeups']),
 			publishDate: z
 				.string()
 				.or(z.date())
